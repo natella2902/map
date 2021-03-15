@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Основы Vue</title>
+    <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+
+<div class="wrapper" id="app" v-cloak>
+    <section class="section hero">
+        <header class="header">
+            <div class="container header__container">
+                <div class="logo">
+                    LOGO
+                </div>
+                <div class="header__title">
+                    География очень важных людей
+                </div>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            Меню
+                        </li>
+                        <li class="nav__item">
+                            Меню
+                        </li>
+                        <li class="nav__item">
+                            Меню
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main class="maincontent">
+            <div class="container">
+                <div class="card__container">
+                    <ul class="people__list">
+                       <li class="person__item"
+                       >
+                           <div class="card__title"
+                                v-text="currentStep.title"
+                           >
+                           </div>
+                           <div class="person">
+                               <div class="person__img">
+                                   <img :src="currentStep.avatar"
+                                        alt="Мужчина"
+                                        class="person__pic"
+                                   >
+                               </div>
+                               <div class="person__about">
+                                   <span class="person__name"
+                                         v-text="currentStep.name"
+                                   >
+                                   </span>
+                                   <span class="person__position"
+                                         v-text="currentStep.position"
+                                   >
+
+                                   </span>
+                                   <span class="person__faq"
+                                         v-text="currentStep.faq"
+                                   >
+
+                                   </span>
+                                   <span class="person__answers"
+                                         v-text="currentStep.answers"
+                                   >
+
+                                   </span>
+                                   <span class="person__phone"
+                                         v-text="currentStep.phone"
+                                   >
+
+                                   </span>
+                                   <span class="person__email"
+                                         v-text="currentStep.email"
+                                   >
+
+                                   </span>
+                               </div>
+
+
+                       </li>
+                    </ul>
+                </div>
+                <div class="map">
+                    <svg viewBox="0 0 1226 656">
+                        <path
+                            v-for="(step, idx) in steps"
+                            :d="step.temp"
+                            class="part"
+                            @click="setActive(idx)"
+                        />
+
+                    </svg>
+                <img src="svg/01.svg" alt="">
+                </div>
+            </div>
+        </main>
+    </section>
+</div>
+
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="vue.js"></script>
+</body>
+</html>
